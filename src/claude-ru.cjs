@@ -8,7 +8,7 @@ const os = require('os');
 // Словарь переводов
 const translations = {
   // Help screen - main
-  'Usage: claude [options] [command] [prompt]': 'Использование: claude [опции] [команда] [запрос]',
+  'Usage: claude [options] [command] [prompt]': 'Использование: claude [options] [command] [prompt]',
   'Claude Code - starts an interactive session by default, use -p/--print for': 'Claude Code - запускает интерактивную сессию по умолчанию, используйте -p/--print для',
   'non-interactive output': 'неинтерактивного вывода',
   'Arguments:': 'Аргументы:',
@@ -24,7 +24,7 @@ const translations = {
   'Check the health of your Claude Code auto-updater': 'Проверить работоспособность автообновления Claude Code',
   'Check for updates and install if available': 'Проверить наличие обновлений и установить при наличии',
   'Install Claude Code native build. Use [target] to specify version': 'Установить нативную сборку Claude Code. Используйте [target] для указания версии',
-  'stable, latest, or specific version': 'stable, latest или конкретная версия',
+  'stable, latest, or specific version': 'stable, latest, или конкретная версия',
 
   // Options descriptions - detailed
   'Enable debug mode with optional category filtering': 'Включить режим отладки с опциональной фильтрацией категорий',
@@ -47,7 +47,7 @@ const translations = {
   'Comma or space-separated list of tool names to allow': 'Список имен разрешенных инструментов через запятую или пробел',
   'Comma or space-separated list of tool names to deny': 'Список имен запрещенных инструментов через запятую или пробел',
   'Specify the list of available tools from the built-in set.': 'Укажите список доступных инструментов из встроенного набора.',
-  'Use "" to disable all tools, "default" to use all tools, or specify tool names': 'Используйте "" для отключения всех инструментов, "default" для всех инструментов, или укажите имена инструментов',
+  'Use "" to disable all tools, "default" to use all tools, or specify tool names': 'Используйте "" для отключения всех инструментов, default для всех инструментов, или укажите имена инструментов',
   'Only works with --print mode.': 'Работает только с режимом --print.',
   'Load MCP servers from JSON files or strings': 'Загрузить MCP серверы из JSON файлов или строк',
   'space-separated': 'разделенные пробелами',
@@ -89,8 +89,6 @@ const translations = {
   'loading': 'загрузка',
   'Press': 'Нажмите',
   'press': 'нажмите',
-  'Enter': 'Введите',
-  'enter': 'введите',
   'Type': 'Введите',
   'type': 'введите',
   'Continue': 'Продолжить',
