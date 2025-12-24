@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+npm-debug.log*
+
+# Version info
+.claude-ru-version
+
+# Logs
+*.log
+.claude-ru-autocheck.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Windows
+$RECYCLE.BIN/
+
+# Testing
+test-output/
