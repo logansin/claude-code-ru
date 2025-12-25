@@ -62,12 +62,12 @@ claude --version
 
 **Вариант A: С Git**
 ```bash
-git clone https://github.com/ваш-username/claude-code-ru.git
+git clone https://github.com/logansin/claude-code-ru.git
 cd claude-code-ru
 ```
 
 **Вариант B: Скачать ZIP**
-1. Перейдите на [GitHub репозиторий](https://github.com/ваш-username/claude-code-ru)
+1. Перейдите на [GitHub репозиторий](https://github.com/logansin/claude-code-ru)
 2. Нажмите `Code` → `Download ZIP`
 3. Распакуйте в `C:\Users\ВашеИмя\claude-code-ru`
 

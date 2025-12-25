@@ -213,7 +213,7 @@ scripts\claude-ru-reinstall.cmd
 
 4. **Или создайте Issue**
 
-[Сообщите о пропущенной фразе](https://github.com/ваш-username/claude-code-ru/issues)
+[Сообщите о пропущенной фразе](https://github.com/logansin/claude-code-ru/issues)
 
 ---
 
@@ -389,7 +389,7 @@ Get-Content "$env:USERPROFILE\.claude-ru-autocheck.log"
 
 1. **Проверьте Issues**
 
-[Существующие проблемы](https://github.com/ваш-username/claude-code-ru/issues)
+[Существующие проблемы](https://github.com/logansin/claude-code-ru/issues)
 
 2. **Создайте новый Issue**
 

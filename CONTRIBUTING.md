@@ -6,7 +6,7 @@
 
 ### 🐛 Сообщить об ошибке
 
-1. Проверьте, нет ли уже подобной проблемы в [Issues](https://github.com/ваш-username/claude-code-ru/issues)
+1. Проверьте, нет ли уже подобной проблемы в [Issues](https://github.com/logansin/claude-code-ru/issues)
 2. Создайте новый Issue с описанием:
    - Что вы делали
    - Что ожидали
@@ -59,7 +59,7 @@ const translations = {
 
 2. **Клонируйте свой fork**
 ```bash
-git clone https://github.com/ваш-username/claude-code-ru.git
+git clone https://github.com/logansin/claude-code-ru.git
 cd claude-code-ru
 ```
 
@@ -280,7 +280,7 @@ claude-ru --help | Select-String "ваша фраза"
 
 Если у вас есть вопросы:
 1. Проверьте [FAQ](docs/TROUBLESHOOTING.md)
-2. Посмотрите существующие [Issues](https://github.com/ваш-username/claude-code-ru/issues)
+2. Посмотрите существующие [Issues](https://github.com/logansin/claude-code-ru/issues)
 3. Создайте новый Issue с вопросом
 
 ---

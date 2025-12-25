@@ -3,6 +3,7 @@
 // Русская локализация для Claude Code
 const { spawn } = require('child_process');
 const path = require('path');
+const os = require('os');
 
 // Словарь переводов
 const translations = {
@@ -213,6 +214,264 @@ const translations = {
   'response': 'ответ',
   'Request': 'Запрос',
   'request': 'запрос',
+
+  // Interactive session phrases
+  'Welcome back': 'С возвращением',
+  'Welcome': 'Добро пожаловать',
+  'Starting interactive session': 'Запуск интерактивной сессии',
+  'Resuming session': 'Возобновление сессии',
+  'New session': 'Новая сессия',
+  'Session ID': 'ID сессии',
+  'You': 'Вы',
+  'Assistant': 'Ассистент',
+  'Thinking': 'Думаю',
+  'Working': 'Работаю',
+
+  // Tool and permission messages
+  'Tool': 'Инструмент',
+  'tool': 'инструмент',
+  'Tools': 'Инструменты',
+  'tools': 'инструменты',
+  'Permission required': 'Требуется разрешение',
+  'Allow': 'Разрешить',
+  'allow': 'разрешить',
+  'Deny': 'Запретить',
+  'deny': 'запретить',
+  'Always': 'Всегда',
+  'always': 'всегда',
+  'Never': 'Никогда',
+  'never': 'никогда',
+  'This time only': 'Только в этот раз',
+  'Do you want to allow': 'Хотите разрешить',
+  'Do you trust this directory': 'Доверяете ли вы этой директории',
+  'Trust': 'Доверять',
+  'trust': 'доверять',
+
+  // Token and budget messages
+  'Token': 'Токен',
+  'token': 'токен',
+  'Tokens': 'Токены',
+  'tokens': 'токены',
+  'Budget': 'Бюджет',
+  'budget': 'бюджет',
+  'Cost': 'Стоимость',
+  'cost': 'стоимость',
+  'Usage': 'Использование',
+  'usage': 'использование',
+  'Remaining': 'Осталось',
+  'remaining': 'осталось',
+  'Exceeded': 'Превышено',
+  'exceeded': 'превышено',
+
+  // Model messages
+  'Model': 'Модель',
+  'model': 'модель',
+  'Models': 'Модели',
+  'models': 'модели',
+  'Switching to': 'Переключение на',
+  'Using model': 'Используется модель',
+  'Current model': 'Текущая модель',
+  'Available models': 'Доступные модели',
+
+  // Common UI phrases
+  'Press Enter to continue': 'Нажмите Enter для продолжения',
+  'Press any key': 'Нажмите любую клавишу',
+  'Type your message': 'Введите ваше сообщение',
+  'How can I help you': 'Чем я могу вам помочь',
+  'What would you like to do': 'Что вы хотите сделать',
+  'Ready': 'Готово',
+  'ready': 'готово',
+  'Busy': 'Занят',
+  'busy': 'занят',
+  'Idle': 'Простой',
+  'idle': 'простой',
+
+  // Search and navigation
+  'Search': 'Поиск',
+  'search': 'поиск',
+  'Find': 'Найти',
+  'find': 'найти',
+  'Next': 'Далее',
+  'next': 'далее',
+  'Previous': 'Назад',
+  'previous': 'назад',
+  'Back': 'Назад',
+  'back': 'назад',
+  'Forward': 'Вперед',
+  'forward': 'вперед',
+
+  // Status and progress
+  'In progress': 'В процессе',
+  'in progress': 'в процессе',
+  'Pending': 'В ожидании',
+  'pending': 'в ожидании',
+  'Complete': 'Завершено',
+  'complete': 'завершено',
+  'Incomplete': 'Не завершено',
+  'incomplete': 'не завершено',
+  'Running': 'Выполняется',
+  'running': 'выполняется',
+
+  // Actions
+  'Run': 'Запустить',
+  'run': 'запустить',
+  'Execute': 'Выполнить',
+  'execute': 'выполнить',
+  'Stop': 'Остановить',
+  'stop': 'остановить',
+  'Restart': 'Перезапустить',
+  'restart': 'перезапустить',
+  'Reset': 'Сбросить',
+  'reset': 'сбросить',
+  'Clear': 'Очистить',
+  'clear': 'очистить',
+  'Copy': 'Копировать',
+  'copy': 'копировать',
+  'Paste': 'Вставить',
+  'paste': 'вставить',
+  'Cut': 'Вырезать',
+  'cut': 'вырезать',
+
+  // Authentication and configuration
+  'Authentication': 'Аутентификация',
+  'authentication': 'аутентификация',
+  'Logged in': 'Вход выполнен',
+  'logged in': 'вход выполнен',
+  'Logged out': 'Выход выполнен',
+  'logged out': 'выход выполнен',
+  'Login': 'Войти',
+  'login': 'войти',
+  'Logout': 'Выйти',
+  'logout': 'выйти',
+  'Configuration': 'Конфигурация',
+  'configuration': 'конфигурация',
+  'Settings': 'Настройки',
+  'settings': 'настройки',
+
+  // Common verbs and actions
+  'Open': 'Открыть',
+  'open': 'открыть',
+  'Close': 'Закрыть',
+  'close': 'закрыть',
+  'Submit': 'Отправить',
+  'submit': 'отправить',
+  'Send': 'Отправить',
+  'send': 'отправить',
+  'Receive': 'Получить',
+  'receive': 'получить',
+  'Download': 'Скачать',
+  'download': 'скачать',
+  'Upload': 'Загрузить',
+  'upload': 'загрузить',
+  'Install': 'Установить',
+  'install': 'установить',
+  'Uninstall': 'Удалить',
+  'uninstall': 'удалить',
+
+  // Time-related
+  'Now': 'Сейчас',
+  'now': 'сейчас',
+  'Today': 'Сегодня',
+  'today': 'сегодня',
+  'Yesterday': 'Вчера',
+  'yesterday': 'вчера',
+  'Tomorrow': 'Завтра',
+  'tomorrow': 'завтра',
+  'Recent': 'Недавние',
+  'recent': 'недавние',
+  'Latest': 'Последние',
+  'latest': 'последние',
+
+  // Size and quantity
+  'Small': 'Маленький',
+  'small': 'маленький',
+  'Medium': 'Средний',
+  'medium': 'средний',
+  'Large': 'Большой',
+  'large': 'большой',
+  'All': 'Все',
+  'all': 'все',
+  'None': 'Нет',
+  'none': 'нет',
+  'Some': 'Некоторые',
+  'some': 'некоторые',
+
+  // Quality and state
+  'Good': 'Хорошо',
+  'good': 'хорошо',
+  'Bad': 'Плохо',
+  'bad': 'плохо',
+  'Better': 'Лучше',
+  'better': 'лучше',
+  'Worse': 'Хуже',
+  'worse': 'хуже',
+  'Best': 'Лучшее',
+  'best': 'лучшее',
+  'Worst': 'Худшее',
+  'worst': 'худшее',
+  'New': 'Новый',
+  'new': 'новый',
+  'Old': 'Старый',
+  'old': 'старый',
+  'Current': 'Текущий',
+  'current': 'текущий',
+  'Active': 'Активный',
+  'active': 'активный',
+  'Inactive': 'Неактивный',
+  'inactive': 'неактивный',
+  'Enabled': 'Включено',
+  'enabled': 'включено',
+  'Disabled': 'Отключено',
+  'disabled': 'отключено',
+
+  // Data and information
+  'Data': 'Данные',
+  'data': 'данные',
+  'Information': 'Информация',
+  'information': 'информация',
+  'Details': 'Детали',
+  'details': 'детали',
+  'Description': 'Описание',
+  'description': 'описание',
+  'Name': 'Имя',
+  'name': 'имя',
+  'Value': 'Значение',
+  'value': 'значение',
+  'Key': 'Ключ',
+  'key': 'ключ',
+  'ID': 'ID',
+  'Version': 'Версия',
+  'version': 'версия',
+
+  // Network and connectivity
+  'Online': 'Онлайн',
+  'online': 'онлайн',
+  'Offline': 'Офлайн',
+  'offline': 'офлайн',
+  'Network': 'Сеть',
+  'network': 'сеть',
+  'Connection': 'Соединение',
+  'connection': 'соединение',
+  'Timeout': 'Таймаут',
+  'timeout': 'таймаут',
+
+  // Results and output
+  'Result': 'Результат',
+  'result': 'результат',
+  'Results': 'Результаты',
+  'results': 'результаты',
+  'Output': 'Вывод',
+  'output': 'вывод',
+  'Input': 'Ввод',
+  'input': 'ввод',
+  'Found': 'Найдено',
+  'found': 'найдено',
+  'Not found': 'Не найдено',
+  'not found': 'не найдено',
+  'Available': 'Доступно',
+  'available': 'доступно',
+  'Unavailable': 'Недоступно',
+  'unavailable': 'недоступно',
 };
 
 function translateText(text) {
@@ -247,28 +506,83 @@ function translateText(text) {
 const cliPath = path.join(__dirname, 'cli.js');
 const args = process.argv.slice(2);
 
-const child = spawn('node', [cliPath, ...args], {
-  stdio: ['inherit', 'pipe', 'pipe'],
-  shell: false
-});
+// Пытаемся использовать node-pty для интерактивного режима
+let pty;
+try {
+  pty = require('node-pty');
+} catch (e) {
+  // node-pty не установлен, используем обычный spawn
+  pty = null;
+}
 
-// Перехватываем stdout и переводим
-child.stdout.on('data', (data) => {
-  const translated = translateText(data.toString());
-  process.stdout.write(translated);
-});
+const isInteractive = process.stdout.isTTY && process.stdin.isTTY && !args.includes('--help') && !args.includes('-h');
 
-// Перехватываем stderr и переводим
-child.stderr.on('data', (data) => {
-  const translated = translateText(data.toString());
-  process.stderr.write(translated);
-});
+if (isInteractive && pty && os.platform() === 'win32') {
+  // Windows + PTY + интерактивный режим - используем node-pty для перевода
+  const shell = pty.spawn(process.execPath, [cliPath, ...args], {
+    name: 'xterm-color',
+    cols: process.stdout.columns || 80,
+    rows: process.stdout.rows || 24,
+    cwd: process.cwd(),
+    env: process.env
+  });
 
-child.on('close', (code) => {
-  process.exit(code);
-});
+  // Перехватываем вывод и переводим
+  shell.onData((data) => {
+    const translated = translateText(data);
+    process.stdout.write(translated);
+  });
 
-child.on('error', (err) => {
-  console.error('Ошибка запуска Claude:', err);
-  process.exit(1);
-});
+  // Передаем ввод от stdin в PTY
+  process.stdin.setRawMode(true);
+  process.stdin.on('data', (data) => {
+    shell.write(data.toString());
+  });
+
+  // Обрабатываем изменение размера терминала
+  process.stdout.on('resize', () => {
+    shell.resize(process.stdout.columns || 80, process.stdout.rows || 24);
+  });
+
+  shell.onExit(({ exitCode }) => {
+    process.stdin.setRawMode(false);
+    process.exit(exitCode);
+  });
+
+  // Обрабатываем сигналы
+  process.on('SIGINT', () => {
+    shell.kill();
+  });
+
+  process.on('SIGTERM', () => {
+    shell.kill();
+  });
+
+} else {
+  // Неинтерактивный режим или нет PTY - используем обычный spawn
+  const child = spawn(process.execPath, [cliPath, ...args], {
+    stdio: ['inherit', 'pipe', 'pipe'],
+    shell: false
+  });
+
+  // Перехватываем stdout и переводим
+  child.stdout.on('data', (data) => {
+    const translated = translateText(data.toString());
+    process.stdout.write(translated);
+  });
+
+  // Перехватываем stderr и переводим
+  child.stderr.on('data', (data) => {
+    const translated = translateText(data.toString());
+    process.stderr.write(translated);
+  });
+
+  child.on('close', (code) => {
+    process.exit(code);
+  });
+
+  child.on('error', (err) => {
+    console.error('Ошибка запуска Claude:', err);
+    process.exit(1);
+  });
+}
