@@ -150,7 +150,7 @@ examples/       ~20 KB   (примеры)
    git init
    git add .
    git commit -m "Initial commit: Claude Code RU localization"
-   git remote add origin https://github.com/ваш-username/claude-code-ru.git
+   git remote add origin https://github.com/logansin/claude-code-ru.git
    git push -u origin main
    ```
 

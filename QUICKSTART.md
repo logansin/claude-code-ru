@@ -24,7 +24,7 @@ npm install -g @anthropic-ai/claude-code
 
 ### 2️⃣ Скачайте репозиторий
 ```bash
-git clone https://github.com/ваш-username/claude-code-ru.git
+git clone https://github.com/logansin/claude-code-ru.git
 cd claude-code-ru
 ```
 
