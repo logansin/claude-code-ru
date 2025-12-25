@@ -513,7 +513,20 @@ try {
   pty = null;
 }
 
-const isInteractive = process.stdout.isTTY && process.stdin.isTTY && !args.includes('--help') && !args.includes('-h');
+const isInteractive = process.stdout.isTTY && process.stdin.isTTY && !args.includes('--help') && !args.includes('-h') && !args.includes('--version') && !args.includes('-v');
+
+// Показываем приветствие только в интерактивном режиме
+if (isInteractive && !args.includes('-p') && !args.includes('--print')) {
+  console.log('\x1b[36m╔════════════════════════════════════════════════════════════╗\x1b[0m');
+  console.log('\x1b[36m║\x1b[0m  \x1b[1m🇷🇺 Claude Code - Русская версия\x1b[0m                        \x1b[36m║\x1b[0m');
+  console.log('\x1b[36m║\x1b[0m                                                            \x1b[36m║\x1b[0m');
+  console.log('\x1b[36m║\x1b[0m  \x1b[32m✨ Спасибо, что используете русскую локализацию!\x1b[0m       \x1b[36m║\x1b[0m');
+  console.log('\x1b[36m║\x1b[0m  \x1b[90m470+ переведенных фраз | Поддержка PTY\x1b[0m                \x1b[36m║\x1b[0m');
+  console.log('\x1b[36m║\x1b[0m                                                            \x1b[36m║\x1b[0m');
+  console.log('\x1b[36m║\x1b[0m  \x1b[90mGitHub: github.com/logansin/claude-code-ru\x1b[0m            \x1b[36m║\x1b[0m');
+  console.log('\x1b[36m╚════════════════════════════════════════════════════════════╝\x1b[0m');
+  console.log('');
+}
 
 if (isInteractive && pty && os.platform() === 'win32') {
   // Windows + PTY + интерактивный режим - используем node-pty для перевода
